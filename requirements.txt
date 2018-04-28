@@ -19,7 +19,7 @@ google-auth-httplib2==0.0.3
 google-cloud-bigquery==0.25.0
 google-cloud-core==0.25.0
 google-cloud-dataflow==2.4.0
-google-cloud-pubsub==0.34.0
+google-cloud-pubsub==0.26.0
 google-gax==0.15.16
 googleapis-common-protos==1.5.3
 googledatastore==7.0.1
