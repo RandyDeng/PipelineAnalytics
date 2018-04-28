@@ -15,7 +15,7 @@ def publish_message(project, topic_name):
     data = data.encode('utf-8')
     publisher.publish(topic_path, data=data)
 
-    print('Published messages.')
+    print('Published messages: {}'.format(data))
 
 
 def simulate_datastream():
