@@ -1,13 +1,13 @@
 import generator
 import time
 from google.cloud import pubsub_v1
+from pipelineanalytics import PROJECT, TOPIC_NAME
 
 
-PROJECT = 'pipelineanalytics-202518'
-TOPIC_NAME = 'twitter-ingest'
+SLEEP_TIME = 1
 
 
-def publish_message(project, topic_name):
+def publish_message(project=PROJECT, topic_name=TOPIC_NAME):
     publisher = pubsub_v1.PublisherClient()
     topic_path = publisher.topic_path(project, topic_name)
 
@@ -15,10 +15,10 @@ def publish_message(project, topic_name):
     data = data.encode('utf-8')
     publisher.publish(topic_path, data=data)
 
-    print('Published messages: {}'.format(data))
+    print('Published message: {}'.format(data))
 
 
 def simulate_datastream():
     while True:
         publish_message(PROJECT, TOPIC_NAME)
-        time.sleep(1)
+        time.sleep(SLEEP_TIME)
