@@ -1,1 +1,3 @@
 select SUM(Randy_Deng),SUM(Saul_Crumpton),SUM(Eric_Daigrepont),SUM(Doug_Blough),SUM(Georgia_Tech),SUM(Baymax),SUM(Mario_Brothers),SUM(Marvel_vs_DC),SUM(Dungeons_and_Dragons) FROM pipelineanalytics.word_count;
+
+Select Name,SUM(NAME) IN (Saul_Crumpton,Eric_Daigrepont,Doug_Blough,Georgia_Tech,Baymax,Mario_Brothers,Marvel_vs_DC,Dungeons_and_Dragons) AS Name FROM pipelineanalytics.word_count;
