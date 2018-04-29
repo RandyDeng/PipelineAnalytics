@@ -7,7 +7,7 @@ from google.cloud import pubsub_v1
 PROJECT = 'pipelineanalytics-202518'
 TOPIC_NAME = 'twitter-ingest'
 SUBSCRIPTION = 'dataflow'
-ANALYSIS_INTERVAL = 10
+ANALYSIS_INTERVAL = 30
 
 
 message_q = queue.Queue()
