@@ -14,7 +14,7 @@ message_q = queue.Queue()
 
 
 def receive_message(message):
-    # print('Received message: {}'.format(message))
+    print('Received message: {}'.format(message))
     message.ack()
     message_q.put(message)
 

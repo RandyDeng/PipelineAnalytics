@@ -22,3 +22,7 @@ def simulate_datastream():
     while True:
         publish_message(PROJECT, TOPIC_NAME)
         time.sleep(SLEEP_TIME)
+
+
+if __name__ == '__main__':
+   simulate_datastream()
