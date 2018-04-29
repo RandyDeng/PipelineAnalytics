@@ -7,21 +7,19 @@ from google.cloud import pubsub_v1
 PROJECT = 'pipelineanalytics-202518'
 TOPIC_NAME = 'twitter-ingest'
 SUBSCRIPTION = 'dataflow'
-ANALYSIS_INTERVAL = 30
+ANALYSIS_INTERVAL = 10
 
 
 message_q = queue.Queue()
 
 
 def receive_message(message):
-    print('Received message: {}'.format(message))
+    # print('Received message: {}'.format(message))
     message.ack()
-    message_q.append(message)
+    message_q.put(message)
 
 
 if __name__ == '__main__':
-    print("Starting application")
-
     # Begin callback loop to receive messages
     subscriber = pubsub_v1.SubscriberClient()
     subscription_path = subscriber.subscription_path(
@@ -34,5 +32,5 @@ if __name__ == '__main__':
         # Analyze the data in the queue every ANALYSIS_INTERVAL
         time.sleep(ANALYSIS_INTERVAL)
         size = message_q.qsize()
-        messages = [message_q.get() for i in range(size)]
+        messages = [message_q.get().data for i in range(size)]
         analysis.batch(messages)

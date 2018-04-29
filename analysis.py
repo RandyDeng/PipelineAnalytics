@@ -43,7 +43,5 @@ def batch(messages):
             data[post[0]]["TweetCount"] = 1
             data[post[0]]["StandardWords"] = 0
     for user in data:
-#        print(user)
-        query="INSERT INTO pipelineanalytics.word_count (Username,WordCount,CharCount, TweetCount, StandardWords, Randy_Deng, Saul_Crumpton, Eric_Daigrepont, Doug_Blough, Georgia_Tech, Google_Cloud, Baymax, Mario_Brothers, Marvel_vs_DC, Dungeons_and_Dragons) Values ('%s',%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d);" %(user,data[user]["WordCount"],data[user]["CharCount"],data[user]["TweetCount"],data[user]["StandardWords"],data[user]["Randy_Deng"],data[user]["Saul_Crumpton"],data[user]["Eric_Daigrepont"],data[user]["Doug_Blough"],data[user]["Georgia_Tech"],data[user]["Google_Cloud"],data[user]["Baymax"],data[user]["Mario_Brothers"],data[user]["Marvel_vs_DC"],data[user]["Dungeons_and_Dragons"])
-        print(query)
-        query_standard_sql(query)        
+        query = "INSERT INTO pipelineanalytics.word_count (Username,WordCount,CharCount, TweetCount, StandardWords, Randy_Deng, Saul_Crumpton, Eric_Daigrepont, Doug_Blough, Georgia_Tech, Google_Cloud, Baymax, Mario_Brothers, Marvel_vs_DC, Dungeons_and_Dragons) Values ('%s',%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d);" %(user,data[user]["WordCount"],data[user]["CharCount"],data[user]["TweetCount"],data[user]["StandardWords"],data[user]["Randy_Deng"],data[user]["Saul_Crumpton"],data[user]["Eric_Daigrepont"],data[user]["Doug_Blough"],data[user]["Georgia_Tech"],data[user]["Google_Cloud"],data[user]["Baymax"],data[user]["Mario_Brothers"],data[user]["Marvel_vs_DC"],data[user]["Dungeons_and_Dragons"])
+        query_standard_sql(query)
