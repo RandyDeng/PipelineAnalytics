@@ -1,0 +1,1 @@
+select SUM(Randy_Deng),SUM(Saul_Crumpton),SUM(Eric_Diagrepont),SUM(Doug_Blough),SUM(Georgia_Tech),SUM(Baymax),(Mario_Brothers),SUM(MArvel_vs_DC),SUM(Dungeons_and_Dragons) FROM pipelineanalytics.word_count;
